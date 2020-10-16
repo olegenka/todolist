@@ -1,14 +1,16 @@
 <template>
   <div>
-    <h2>Todo APP</h2>
+    <BackHome />
     <hr>
     <ToDoList
         v-bind:todos="todos"
     />
+    <router-view />
   </div>
 </template>
 
 <script>
+import BackHome from '@/components/BackHome'
 import ToDoList from '@/components/ToDoList'
 export default {
   name: 'App',
@@ -22,7 +24,7 @@ export default {
     }
   },
   components: {
-    ToDoList
+    ToDoList,BackHome
   }
 }
 </script>
