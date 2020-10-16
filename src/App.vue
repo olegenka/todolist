@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
-    <h1>Todo APP</h1>
+  <div id="app" class = "todos">
+    <h1>ToDoApp</h1>
+    <p><img src="/767ca771755f4675d4063c03e17c8595-medical-checklist-icon-by-vexels.png" height="150" width="150" ></p>
    <hr>
 
     <router-view />
@@ -30,5 +31,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.todos{
+  background: azure;
 }
 </style>
