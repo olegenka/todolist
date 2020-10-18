@@ -5,6 +5,7 @@
     <hr>
     <ToDoList
         v-bind:todos="todos"
+        @remove-todo="removeTodo"
     />
     <router-view />
   </div>
@@ -22,6 +23,11 @@ export default {
         {id: 2, title: 'Купить масло', completed: false },
         {id: 3, title: 'Купить пиво', completed: false }
       ]
+    }
+  },
+  methods:{
+    removeTodo(id){
+      this.todos=this.todos.filter(t=>t.id!==id)
     }
   },
   components: {
