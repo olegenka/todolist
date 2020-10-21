@@ -2,9 +2,8 @@
  <div>
    <ul>
     <Todoitem
-
-        v-for="todo of todos"
         v-bind:key="todo.id"
+        v-for="todo of todos"
         v-bind:todo="todo"
         v-on:remove-todo="removeTodo"
     />
@@ -22,10 +21,9 @@ export default {
   methods: {
     removeTodo(id)
     {
-      console.log(id)
+      this.$emit('remove-todo', id)
     }
-
-    }
+  }
 }
 </script>
 
