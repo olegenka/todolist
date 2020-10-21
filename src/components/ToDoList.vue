@@ -19,10 +19,12 @@ export default {
   components: {
     Todoitem
   },
-  method: {
-    removeTodo(id){
+  methods: {
+    removeTodo(id)
+    {
       console.log(id)
-     }
+    }
+
     }
 }
 </script>

@@ -15,7 +15,7 @@
 import BackHome from '@/components/BackHome'
 import ToDoList from '@/components/ToDoList'
 export default {
-  name: 'App',
+  name: 'app',
   data() {
     return {
       todos: [
@@ -27,7 +27,7 @@ export default {
   },
   methods:{
     removeTodo(id){
-      this.todos=this.todos.filter(t=>t.id!==id)
+      this.todos=this.todos.filter(t=>t.id !== id)
     }
   },
   components: {
