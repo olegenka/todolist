@@ -20,20 +20,17 @@ export default {
   name: 'app',
   data() {
     return {
-      todos: [
-        {id: 1, title: 'Купить хлеб', completed: false},
-        {id: 2, title: 'Купить масло', completed: false},
-        {id: 3, title: 'Купить пиво', completed: false}
-      ]
+      todos: []
     }
   },
   mounted() {
-    this.$axios.get("/todos")
+    this.$axios.get("/todos/")
         .then(result => {
           this.todos = result.data
           console.log(result)
         })
         .catch(error => {
+          console.log("asd")
           console.log(error)
         })
     //TODO I left this just for ur patience
