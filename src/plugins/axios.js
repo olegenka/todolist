@@ -1,8 +1,7 @@
 import ax from 'axios'
 
 export const axios = ax.create({
-    //TODO change this value to local mock service
-    baseURL: "http://localhost:8000/"
+    baseURL: "http://localhost:8081/"
 })
 
 export default {

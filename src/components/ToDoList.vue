@@ -22,6 +22,7 @@ export default {
     removeTodo(id)
     {
       this.$emit('remove-todo', id)
+      console.log(id)
     }
   }
 }

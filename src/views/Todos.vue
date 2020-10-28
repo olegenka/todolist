@@ -24,7 +24,7 @@ export default {
     }
   },
   mounted() {
-    this.$axios.get("/todos/")
+    this.$axios.get("/todos")
         .then(result => {
           this.todos = result.data
           console.log(result)
