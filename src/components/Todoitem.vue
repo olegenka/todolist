@@ -2,12 +2,10 @@
   <li>
     <span v-bind:class="{done:todo.completed}">
     <input type="checkbox" v-on:change="todo.completed=!todo.completed">
-      <strong>{{todo.id}}</strong>
+      <strong>{{index + 1}}</strong>
     {{todo.text}}
     </span>
-    <button class="nm"
-            v-on:click="$emit('remove-todo',todo.id)"
-    > &times; </button>
+    <button class="nm btn btn-danger"  v-on:click="$emit('remove-todo',todo.id)"> &times; </button>
   </li>
 </template>
 
@@ -18,8 +16,8 @@ export default
     todo:{
       type:Object,
           require:true
-
-    }
+    },
+    index: Number
   }
 }
 
@@ -33,10 +31,11 @@ export default
    margin-bottom: 1rem;
  }
   .nm {
-    background: #b30303;
     color: #fff;
-    border-radius: 50%;
-    font-weight: bold;}
+    border-radius: 150%;
+    font-size: 15px;
+    margin-bottom: 5px
+  }
   input {
     margin-right: 1rem;
   }

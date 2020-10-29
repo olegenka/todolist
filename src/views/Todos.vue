@@ -4,6 +4,9 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <BackHome/>
     <hr>
+    <AddTodo
+        @add-todo="addTodo"
+    />
     <ToDoList
         v-bind:todos="todos"
         @remove-todo="removeTodo"
@@ -15,6 +18,7 @@
 <script>
 import BackHome from '@/components/BackHome'
 import ToDoList from '@/components/ToDoList'
+import AddTodo from '@/components/AddTodo'
 
 export default {
   name: 'app',
@@ -40,11 +44,28 @@ export default {
   },
   methods: {
     removeTodo(id) {
-      this.todos = this.todos.filter(t => t.id !== id)
+      this.$axios.delete('/todos/', {data: {"id": id}})
+          .then(() => {
+            {
+              for (let i = 0; i < this.todos.length; i++) {
+                if (this.todos[i].id === id) {
+                  console.log("delete")
+                  this.todos.splice(i, 1)
+                }
+              }
+            }
+          })
+          .catch(error => console.log(error))
+    },
+    addTodo() {
+      this.$axios.post("/todos/", {text: this.title})
+      .then(response => {this.todos.push(response.data)})
+      .catch(error => console.log(error))
     }
+
   },
   components: {
-    ToDoList, BackHome
+    ToDoList, BackHome, AddTodo
   }
 }
 </script>
