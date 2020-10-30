@@ -60,10 +60,11 @@ export default {
     addTodo(newTodo) {
       console.log(newTodo.text)
       this.$axios.post("/todos/", {text: newTodo.text})
-      .then(response => {this.todos.push(response.data)})
-      .catch(error => console.log(error))
+          .then(response => {
+            this.todos.push(response.data)
+          })
+          .catch(error => console.log(error))
     }
-
   },
   components: {
     ToDoList, BackHome, AddTodo
