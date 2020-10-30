@@ -55,7 +55,11 @@ export default {
         },
         sendRequest() {
           console.log(this.info.text)
-          this.$axios.post("/todos/", {text: this.info.text})
+          this.$axios.put("/todos/", {
+            id: this.info.id,
+            isDone: "False",
+            text: this.info.text
+          })
               .then(response => {
                 for (let i = 0; i < this.todos.length; i++) {
                   if (this.todos[i].id === this.info.id) {
