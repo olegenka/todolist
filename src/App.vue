@@ -3,7 +3,7 @@
     <h1>ToDoApp</h1>
     <p><img src="/767ca771755f4675d4063c03e17c8595-medical-checklist-icon-by-vexels.png" height="150" width="150" ></p>
    <hr>
-
+  <TopNavigationBar></TopNavigationBar>
     <router-view />
   </div>
 </template>
@@ -23,3 +23,9 @@
   background: azure;
 }
 </style>
+<script>
+import TopNavigationBar from "@/components/TopNavigationBar";
+export default {
+  components: {TopNavigationBar}
+}
+</script>

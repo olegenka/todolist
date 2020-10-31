@@ -1,7 +1,7 @@
 import ax from 'axios'
 
 export const axios = ax.create({
-    baseURL: "http://localhost:8081/"
+    baseURL: "http://localhost:8000/"
 })
 
 export default {
