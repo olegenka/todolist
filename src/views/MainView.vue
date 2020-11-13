@@ -67,13 +67,13 @@ export default {
   methods: {
     addNewTodo() {
       this.$axios.post("/todos/",
-          {text: this.modal.text})
+          {text: this.modal.text}, {headers:{Authorization: JSON.parse(localStorage.getItem('user')).token}})
           .then(() => {
             this.getAllTodos()
           }).catch(error => alert(error))
     },
     getAllTodos() {
-      this.$axios("/todos/").then(response => {
+      this.$axios.get("/todos/",{headers:{Authorization: JSON.parse(localStorage.getItem('user')).token}}).then(response => {
         this.todoList = []
         this.todoList = response.data;
       })
@@ -85,7 +85,7 @@ export default {
       this.$axios.delete("/todos/", {
         data: {
           id: id
-        }
+        }, headers:{Authorization: JSON.parse(localStorage.getItem('user')).token}
       }).then(() => {
         for (let i = 0; i < this.todoList.length; i++)
           if (id === this.todoList[i].id) {
@@ -98,7 +98,7 @@ export default {
         id: this.modal.id,
         text: this.modal.text,
         isDone: this.modal.isDone
-      }).then(() => {
+      },{headers:{Authorization: JSON.parse(localStorage.getItem('user')).token}}).then(() => {
         this.getAllTodos()
       }).catch(error => alert(error))
     },
@@ -108,7 +108,7 @@ export default {
         id: id,
         text: text,
         isDone: isDone
-      }).then(() => {
+      },{headers:{Authorization: JSON.parse(localStorage.getItem('user')).token}}).then(() => {
         this.getAllTodos()
       }).catch(error => alert(error))
     },

@@ -19,6 +19,10 @@ export default new Router({
         {
             path: '/newVersion',
             component: () => import('./views/MainView.vue')
+        },
+        {
+            path:'/profile',
+            component:() => import('./views/Profile.vue')
         }
     ]
 })

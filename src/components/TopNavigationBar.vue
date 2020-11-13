@@ -63,6 +63,10 @@ export default {
     },
     goHome() {
       this.$router.push('/')
+    },
+    logOut() {
+      this.$store.dispatch('auth/logout');
+      this.$router.push('/login');
     }
   }
 }
