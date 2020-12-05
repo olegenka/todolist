@@ -1,11 +1,11 @@
 import ax from 'axios'
 
 export const axios = ax.create({
-    baseURL: "http://localhost:8000/"
+    baseURL: process.env.VUE_APP_BACKEND_URL
 })
 
 export default {
-    install (Vue) {
+    install(Vue) {
         Vue.prototype.$axios = axios
     }
 }
