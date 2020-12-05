@@ -17,7 +17,7 @@ export default new Router({
             component: Register
         },
         {
-            path: '/newVersion',
+            path: '/todos',
             component: () => import('./views/MainView.vue')
         },
         {

@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     goToTodos() {
-      this.$router.push('/newVersion')
+      this.$router.push('/todos')
     },
     goHome() {
       this.$router.push('/')

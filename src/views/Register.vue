@@ -85,7 +85,7 @@ export default {
   },
   mounted() {
     if (this.loggedIn) {
-      this.$router.push('/newVersion');
+      this.$router.push('/todos');
     }
   },
   methods: {
