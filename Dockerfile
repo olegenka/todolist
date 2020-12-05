@@ -5,7 +5,7 @@ RUN mkdir -p /tmp/nginx/vue-single-page-app
 RUN mkdir -p /var/log/nginx
 RUN mkdir -p /var/www/html
 
-# Copy the respective nginx configuration files
+# Copy the respective nginx configuration file
 COPY src/nginx_config/nginx.conf /etc/nginx/nginx.conf
 COPY src/nginx_config/default.conf /etc/nginx/conf.d/default.conf
 
